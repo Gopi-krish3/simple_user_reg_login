@@ -5,6 +5,12 @@ import sqlite3 as sql
 
 con=None
 
+def encrypt(st):
+    from hashlib import sha256
+    s=sha256(st.encode())
+    b=s.hexdigest()
+    return b
+
 def connect():
     global con
     if con==None:
@@ -25,12 +31,13 @@ def register():
         print("error..")
     else:
         i=[j[0] for j in data]
+        finpass=encrypt(passwd)
         if uid=="" or passwd=="" or len(str(passwd))<4:
             messagebox.showerror("credential error","enter all the credentials")
         elif uid in i:
             messagebox.showerror("invalid","username already present!")
         else:
-            st=f"insert into login_auth values('{uid}','{passwd}')"
+            st=f"insert into login_auth values('{uid}','{finpass}')"
             cur.execute(st)
             print("record entered..")
             messagebox.showinfo("success","successfully registered.")

@@ -3,6 +3,12 @@ from tkinter import *
 from tkinter.ttk import *
 import sqlite3 as sql
 
+def encrypt(st):
+    from hashlib import sha256
+    s=sha256(st.encode())
+    b=s.hexdigest()
+    return b
+
 def valid():
     try:
         con=sql.connect("databases/db.sqlite3")
@@ -16,7 +22,8 @@ def valid():
         print("error..")
     else:
         #usnms=[d[0] for d in data]
-        if (uid,passwd) in data:
+        finpass=encrypt(passwd)
+        if (uid,finpass) in data:
             messagebox.showinfo("welcome","successful login!")
         else:
             messagebox.showerror("invalid login","either credentials are wrong or you have not registered.")
