@@ -11,7 +11,7 @@ try:
 except con.Error:
     print("error...")
 else:
-    cur.execute('create table if not exists login_auth(username varchar(20) primary key, password varchar(20))')
+    cur.execute('create table if not exists login_auth(username varchar(20) primary key, password varchar(70))')
 finally:
     cur.close()
     con.commit()
