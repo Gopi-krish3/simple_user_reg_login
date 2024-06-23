@@ -1,2 +1,2 @@
-The project is about a simple user registeration and login form, where user a user registers his username and password in database and can verify login through form. Simply, the project is a basic demonstration of user registration and login. Before executing dblogin.py or dbentry.py, if databases folder cannot be seen then, first of all dbcreate.py should be executed. Only then, the other files can be executed.
+The project is about a simple user registeration and login form, where user a user registers username and password in database and can verify login through form. Simply, the project is a basic demonstration of user registration and login. 
 The project use a simple document database SQLite3 for project.

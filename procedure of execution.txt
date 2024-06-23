@@ -1,0 +1,6 @@
+The text file is about how to execute the project in a local machine.
+Before executing dblogin.py or dbentry.py, first of all dbcreate.py should be executed. Only then, the other files can be executed.
+
+requirements are:
+--> python with version >= 3.0 should have been installed in local machine(with path configured).
+--> If python is installed, then, double click on the file createdb.py and databases directory including db.sqlite3 and tables wiil be created.
